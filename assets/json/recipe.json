@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "recipeTitle": "Egg",
+    "mealType": "Breakfast",
+    "serves": "Any",
+    "difficultyLevel": "Beginner",
+    "ingredients": [
+      "Water",
+      "Egg",
+      "Salt"
+    ],
+    "preparationSteps": [
+      "Add water in a Utensil",
+      "Add egg in the water",
+      "Heat until the water starts boiling and wait for 5 mins",
+      "Serve eggs with some salt and addons"
+    ],
+    "image": "https://via.placeholder.com/450x280/454545/ffffff?text=Egg"
+  },
+  {
+    "id": 2,
+    "recipeTitle": "Egg2",
+    "mealType": "Breakfast",
+    "serves": "Any",
+    "difficultyLevel": "Beginner",
+    "ingredients": [
+      "Water",
+      "Egg",
+      "Salt"
+    ],
+    "preparationSteps": [
+      "Add water in a Utensil",
+      "Add egg in the water",
+      "Heat until the water starts boiling and wait for 5 mins",
+      "Serve eggs with some salt and addons"
+    ],
+    "image": "https://via.placeholder.com/450x280/454545/ffffff?text=Egg2"
+  },
+  {
+    "id": 3,
+    "recipeTitle": "Egg3",
+    "mealType": "Breakfast",
+    "serves": "Any",
+    "difficultyLevel": "Beginner",
+    "ingredients": [
+      "Water",
+      "Egg",
+      "Salt",
+      "1",
+      "2",
+      "3"
+    ],
+    "preparationSteps": [
+      "Add water in a Utensil",
+      "Add egg in the water",
+      "Heat until the water starts boiling and wait for 5 mins",
+      "Serve eggs with some salt and addons"
+    ],
+    "image": "https://via.placeholder.com/450x280/454545/ffffff?text=Egg3"
+  }
+]
