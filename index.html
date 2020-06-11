@@ -51,12 +51,20 @@
         <div class="wrapper">
           <h2>Search for a Recipe</h2>
           <div class="input-area">
-            <input type="text" placeholder="Enter a Recipe" id="search-text">
+            <input type="text" placeholder="Enter a Recipe" id="search-text" class="search-text">
             <span class="helper">Enter a Recipe first</span>
           </div>
           <div class="control-area">
             <button type="button" id="search-button">Search</button>
           </div>
+          <ul id="searched-list" class="searched-list"></ul>
+        </div>
+      </section>
+      <!-- Searched Recipe Details -->
+      <section class="searched-recipe-details">
+        <div class="wrapper">
+          <h2>Recipe Details</h2>
+          <div id="searched-details-area"></div>
         </div>
       </section>
     </main>

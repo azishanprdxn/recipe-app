@@ -16,12 +16,11 @@ newRequest.onreadystatechange = function () {
 
 // Function to Display Recipe Title List
 let displayList = () => {
-  let button = document.querySelectorAll('.recipe-list li');
   // Displays the Recipes List
   for (let i = 0; i < length; i++) {
     document.getElementById('recipe-list').innerHTML +=
     `<li onclick="displayRecipe(${i})">
-      <a href="#FIXME" title="${fetchedData[i].recipeTitle}">${fetchedData[i].id}. ${fetchedData[i].recipeTitle}</a>
+      <a title="${fetchedData[i].recipeTitle}">${fetchedData[i].id}. ${fetchedData[i].recipeTitle}</a>
     </li>`;
   }
 }
@@ -91,6 +90,58 @@ function searchRecipe() {
   } else {
     helper.style.opacity = '0';
     helper.style.transform = 'translateY(-6px)';
-    console.log(searchText);
+    searchedRecipeList();
   }
+}
+
+let searchedRecipeList = () => {
+  // AJAX Request
+  let searchText = document.getElementById('search-text').value;
+  let searchRequest = new XMLHttpRequest();
+  let fetchedRecipe, fetchedLength;
+  let apiUrl = `https://www.themealdb.com/api/json/v1/1/search.php?s=${searchText}`;
+  
+  searchRequest.open('GET', apiUrl, true);
+  searchRequest.send();
+  searchRequest.onreadystatechange = function () {
+    if (this.readyState == 4 && this.status == 200) {
+      // Stores the data fetched in fetchedData
+      fetchedRecipe = JSON.parse(this.responseText);
+      console.log(fetchedRecipe);
+      if (fetchedRecipe.meals === null) {
+        console.log(searchText);
+        document.getElementById('searched-list').innerHTML =
+        `<li class="not-found">
+          <a title="${searchText} Not Found">${searchText} Not Found</a>
+        </li>`;
+      } else {
+        fetchedLength = fetchedRecipe.meals.length;
+        // Displays the Recipes List
+        document.getElementById('searched-list').innerHTML = '';
+        let count = 1;
+        for (let i = 0; i < fetchedLength; i++) {
+          document.getElementById('searched-list').innerHTML +=
+          `<li onclick="displaySearchedRecipeDetails(${i}, ${fetchedRecipe})">
+            <a title="${fetchedRecipe.meals[i].strMeal}">${count}. ${fetchedRecipe.meals[i].strMeal}</a>
+          </li>`;
+          count++;
+        }
+      }
+    }
+  }
+}
+
+// Function to Display Searched Recipe Detail
+let displaySearchedRecipeDetails = (x, fetched) => {
+  let fetchedRecipe = fetched;
+  console.log(fetchedRecipe, x);
+  let heading = document.querySelectorAll('.searched-recipe-details h2');
+  heading[0].style.display = 'block';
+  // Displays the Recipes Details
+  // document.getElementById('searched-details-area').innerHTML =
+  // `<div class="recipe-card">
+  //   <ul class="details">
+  //     <li>Recipe Title: <span>${fetchedRecipe.meals[x].strMeal}</span></li>
+  //   </ul>
+  // </div>`;
 }
