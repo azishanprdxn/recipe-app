@@ -131,12 +131,18 @@ let searchedRecipeList = () => {
   }
 }
 
-// Function to Display Searched Recipe Detail
-let displaySearchedRecipeDetails = (x) => {
-  let fetchedRecipe = x;
-  console.log(fetchedRecipe, x);
+let displaySearchedRecipeDetails = function (x) {
+  console.log(this.responseText, x);
   let heading = document.querySelectorAll('.searched-recipe-details h2');
   heading[0].style.display = 'block';
+}
+
+// // Function to Display Searched Recipe Detail
+// let displaySearchedRecipeDetails = (x) => {
+//   // let fetchedRecipe = this.searchedRecipeList.fetchedRecipe;
+//   console.log(this.searchedRecipeList, x);
+//   let heading = document.querySelectorAll('.searched-recipe-details h2');
+//   heading[0].style.display = 'block';
   // Displays the Recipes Details
   // document.getElementById('searched-details-area').innerHTML =
   // `<div class="recipe-card">
@@ -144,4 +150,4 @@ let displaySearchedRecipeDetails = (x) => {
   //     <li>Recipe Title: <span>${fetchedRecipe.meals[x].strMeal}</span></li>
   //   </ul>
   // </div>`;
-}
+// }
