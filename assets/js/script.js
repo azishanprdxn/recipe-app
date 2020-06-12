@@ -131,23 +131,23 @@ let searchedRecipeList = () => {
   }
 }
 
-let displaySearchedRecipeDetails = function (x) {
-  console.log(this.responseText, x);
+function displaySearchedRecipeDetails(x) {
+  let fetchedRecipe;
+  console.log(fetchedRecipe, x);
   let heading = document.querySelectorAll('.searched-recipe-details h2');
   heading[0].style.display = 'block';
-}
-
-// // Function to Display Searched Recipe Detail
-// let displaySearchedRecipeDetails = (x) => {
-//   // let fetchedRecipe = this.searchedRecipeList.fetchedRecipe;
-//   console.log(this.searchedRecipeList, x);
-//   let heading = document.querySelectorAll('.searched-recipe-details h2');
-//   heading[0].style.display = 'block';
   // Displays the Recipes Details
-  // document.getElementById('searched-details-area').innerHTML =
-  // `<div class="recipe-card">
-  //   <ul class="details">
-  //     <li>Recipe Title: <span>${fetchedRecipe.meals[x].strMeal}</span></li>
-  //   </ul>
-  // </div>`;
-// }
+  document.getElementById('searched-details-area').innerHTML =
+  `<div class="recipe-card">
+    <ul class="details">
+      <li>Recipe Title: <span>{fetchedData[x].recipeTitle}</span></li>
+      <li>Meal Type: <span>{fetchedData[x].mealType}</span></li>
+      <li>Number of People it Serves: <span>{fetchedData[x].serves}</span></li>
+      <li>Difficulty Level: <span>{fetchedData[x].difficultyLevel}</span></li>
+      <li>Ingredients: <span><ul id="ing" class="ingredients"></ul></span></li>
+      <li>Preparation Steps: <span><ul id="steps" class="preparation-steps"></ul></span></li>
+      <li>Photo:
+      </li>
+    </ul>
+  </div>`;
+}

@@ -314,6 +314,8 @@ h2 {
   padding-top: 24px;
 }
 
+.searched-details-area .recipe-card { margin-bottom: 32px; }
+
 /*=================================
   main styling ends here
 =================================*/
