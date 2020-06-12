@@ -16,7 +16,7 @@
       "Bake at gas 5, 190°C, fan 170°C for 18 mins or until just crisp and golden. The cookies should still be slightly soft and chewy in the middle.",
       "Allow to cool before serving. The baked cookies will keep for up to 2 days stored in an airtight container."
     ],
-    "image": "./assets/images/banana-choc-chips.jpg"
+    "image": "./assets/images/banana-choc-chips.JPG"
   },
   {
     "id": 2,
@@ -42,7 +42,7 @@
       "Fry for 2-3 mins, then carefully turn each ball over and cook for a further 2-3 mins, until golden all over. Remove with the slotted spoon and leave to cool for 5-10 mins on kitchen paper. Repeat with the remaining dough balls, ensuring the oil temperature stays at 160°C.",
       "Using a skewer, pierce a hole in each doughnut, wiggling to make space for the filling. Put 340g smooth strawberry jam in a piping bag fitted with a medium nozzle. Working one at a time, insert the nozzle in the hole of each doughnut and gently squeeze to fill with jam. Put 100g caster sugar on a plate or shallow dish and roll the warm doughnuts in the sugar to coat."
     ],
-    "image": "./assets/images/jam.jpg"
+    "image": "./assets/images/jam.JPG"
   },
   {
     "id": 3,
@@ -61,7 +61,7 @@
       "Bake for 50-55 mins until piping hot with a crispy top.",
       "Serve immediately."
     ],
-    "image": "./assets/images/potato.jpg"
+    "image": "./assets/images/potato.JPG"
   },
   {
     "id": 4,
@@ -80,6 +80,6 @@
       "Pour the mixture into the prepared cake tin and wrap the outside of the tin in foil. Place in a large roasting tin one-third filled with boiling water. Bake for 1 hr or until a skewer inserted into the middle comes out clean.",
       "Allow the cake to cool completely before removing from the tin. Serve with a dusting of icing sugar and a few fresh raspberries, if you like."
     ],
-    "image": "./assets/images/cake.jpg"
+    "image": "./assets/images/cake.JPG"
   }
 ]
