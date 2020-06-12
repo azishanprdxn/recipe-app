@@ -92,7 +92,6 @@ function searchRecipe() {
 }
 
 let searchedRecipeList = () => {
-  // AJAX Request
   searchText = document.getElementById('search-text').value;
   let apiUrl = `https://www.themealdb.com/api/json/v1/1/search.php?s=${searchText}`;
 
@@ -156,7 +155,7 @@ let displaySearchedRecipeCard = (x) => {
       </li>
     </ul>
     <div class="save-control">
-      <button type="button" onclick="onSave(${x})">Save</button>
+      <button type="button" onclick="onSave(${x})" title="Save">Save</button>
     </div>
   </div>`;
 }

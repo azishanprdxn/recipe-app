@@ -296,7 +296,7 @@ h2 {
   text-align: center;
 }
 
-.control-area button {
+.control-area button, .save-control button {
   padding: 8px 32px;
   border: 1px solid #ecf0f1;
   border-radius: 16px;
@@ -306,7 +306,12 @@ h2 {
   outline: none;
 }
 
-.control-area button:hover {
+.save-control button {
+  margin-bottom: 12px;
+  margin-left: 12px;
+}
+
+.control-area button:hover, .save-control button:hover {
   background-color: #3498db;
   transition: .2s;
 }
