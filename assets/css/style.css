@@ -306,9 +306,10 @@ h2 {
   outline: none;
 }
 
-.save-control button {
-  margin-bottom: 12px;
-  margin-left: 12px;
+.save-control {
+  position: absolute;
+  top: 24px;
+  right: 24px;
 }
 
 .control-area button:hover, .save-control button:hover {
@@ -325,7 +326,10 @@ h2 {
   padding-top: 24px;
 }
 
-.searched-details-area .recipe-card { margin-bottom: 32px; }
+.searched-details-area .recipe-card {
+  margin-bottom: 32px;
+  position: relative;
+}
 
 /*=================================
   main styling ends here
@@ -352,4 +356,10 @@ footer {
 @media only screen and (max-width: 768px) {
   .recipe-card { width: 92%; }
   .details li img { margin-left: 0; }
+
+  .save-control {
+    position: static;
+    margin-left: 12px;
+    margin-bottom: 12px;
+  }
 }  

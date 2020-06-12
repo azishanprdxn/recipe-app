@@ -163,9 +163,8 @@ let displaySearchedRecipeCard = (x) => {
 // On Save Function
 let onSave = (x) => {
   let saveData = searchResult.meals[x];
-  console.log(saveData);
-
   const data = saveData;
+  console.log(data);
 
   fetch(recipeLink, {
     method: 'POST', // or 'PUT'
