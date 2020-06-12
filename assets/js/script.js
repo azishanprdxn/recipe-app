@@ -121,7 +121,7 @@ let searchedRecipeList = () => {
         let count = 1;
         for (let i = 0; i < fetchedLength; i++) {
           document.getElementById('searched-list').innerHTML +=
-          `<li onclick="displaySearchedRecipeDetails(${i}, ${fetchedRecipe})">
+          `<li onclick="displaySearchedRecipeDetails(${i})">
             <a title="${fetchedRecipe.meals[i].strMeal}">${count}. ${fetchedRecipe.meals[i].strMeal}</a>
           </li>`;
           count++;
@@ -132,8 +132,8 @@ let searchedRecipeList = () => {
 }
 
 // Function to Display Searched Recipe Detail
-let displaySearchedRecipeDetails = (x, fetched) => {
-  let fetchedRecipe = fetched;
+let displaySearchedRecipeDetails = (x) => {
+  let fetchedRecipe = x;
   console.log(fetchedRecipe, x);
   let heading = document.querySelectorAll('.searched-recipe-details h2');
   heading[0].style.display = 'block';

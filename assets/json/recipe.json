@@ -1,62 +1,85 @@
 [
   {
     "id": 1,
-    "recipeTitle": "Egg",
-    "mealType": "Breakfast",
-    "serves": "Any",
-    "difficultyLevel": "Beginner",
+    "recipeTitle": "Banana Choco Chip Cookies",
+    "mealType": "Snacks",
+    "serves": "16 Pieces",
+    "difficultyLevel": "Intermediate",
     "ingredients": [
-      "Water",
-      "Egg",
-      "Salt"
+      "2 large ripe bananas",
+      "150g Scottish porridge oats",
+      "100g milk chocolate chips"
     ],
     "preparationSteps": [
-      "Add water in a Utensil",
-      "Put egg in the water",
-      "Heat until the water starts boiling and wait for 5 mins",
-      "Serve eggs with some salt and addons"
+      "Mash 2 large ripe bananas in a mixing bowl with a fork until quite smooth. Mix in 150g oats until well coated in the banana, then fold through 100g milk chocolate chips.",
+      "Use a tablespoon to scoop out 16 balls of dough. Dollop onto a large baking tray lined with baking paper, leaving a gap between each cookie as they will spread slightly when baked. Gently press down and pat the cookies into a rough round shape.",
+      "Bake at gas 5, 190°C, fan 170°C for 18 mins or until just crisp and golden. The cookies should still be slightly soft and chewy in the middle.",
+      "Allow to cool before serving. The baked cookies will keep for up to 2 days stored in an airtight container."
     ],
-    "image": "https://via.placeholder.com/450x280/454545/ffffff?text=Egg"
+    "image": "./assets/images/banana-choc-chips.jpg"
   },
   {
     "id": 2,
-    "recipeTitle": "Egg2",
-    "mealType": "Breakfast",
-    "serves": "Any",
-    "difficultyLevel": "Beginner",
+    "recipeTitle": "Jam Doughnuts",
+    "mealType": "Any",
+    "serves": "5-6 People",
+    "difficultyLevel": "Intermediate",
     "ingredients": [
-      "Water",
-      "Egg",
-      "Salt"
+      "1 x 7g sachet fast-action yeast",
+      "500g strong bread flour, plus extra for dusting",
+      "50g caster sugar, plus 100g for coating",
+      "1 tsp salt",
+      "100g unsalted butter, chilled and cut into cubes",
+      "2 large eggs, lightly beaten",
+      "2ltr sunflower oil for deep frying, plus extra for greasing",
+      "1 x 340g jar smooth strawberry jam"
     ],
     "preparationSteps": [
-      "Add water in a Utensil",
-      "Put egg in the water",
-      "Heat until the water starts boiling and wait for 5 mins",
-      "Serve eggs with some salt and addons"
+      "Stir 7g yeast into 160ml warm water in a jug, until frothy. Sift 500g strong bread flour, 50g sugar and 1 tsp salt into a bowl. Add 100g chilled and cubed unsalted butter and rub into the dry ingredients with your fingertips until it resembles breadcrumbs. Stir in the yeast liquid and 2 eggs with a wooden spoon to form a dough.",
+      "Dust a surface with flour. Knead the dough for 10 mins by hand (or in a mixer with a dough hook), until it springs back when pressed. Put the dough in a lightly greased bowl and cover loosely with oiled clingflm. Leave to prove in a warm place for 1-2 hrs, until doubled in size.",
+      "Tip out the dough onto a floured surface; knead for 2 mins. Divide into 16 equal pieces and roll into balls. Arrange the dough balls on 2 greased baking trays, spacing them well apart. Cover loosely with oiled clingfilm and set aside to prove for 1-2 hrs, until doubled in size.",
+      "Pour 2ltr sunflower oil into a large deep pan and heat to 160°C. If you don’t have a kitchen thermometer, test the temperature by dropping in a cube of bread – if it turns golden in 30 secs, the oil is ready. Working in batches, use a slotted spoon to carefully lower the dough balls into the hot oil.",
+      "Fry for 2-3 mins, then carefully turn each ball over and cook for a further 2-3 mins, until golden all over. Remove with the slotted spoon and leave to cool for 5-10 mins on kitchen paper. Repeat with the remaining dough balls, ensuring the oil temperature stays at 160°C.",
+      "Using a skewer, pierce a hole in each doughnut, wiggling to make space for the filling. Put 340g smooth strawberry jam in a piping bag fitted with a medium nozzle. Working one at a time, insert the nozzle in the hole of each doughnut and gently squeeze to fill with jam. Put 100g caster sugar on a plate or shallow dish and roll the warm doughnuts in the sugar to coat."
     ],
-    "image": "https://via.placeholder.com/450x280/454545/ffffff?text=Egg2"
+    "image": "./assets/images/jam.jpg"
   },
   {
     "id": 3,
-    "recipeTitle": "Egg3",
+    "recipeTitle": "Creamy Ham and Potato Casserole",
     "mealType": "Breakfast",
-    "serves": "Any",
+    "serves": "4 Peoples",
     "difficultyLevel": "Beginner",
     "ingredients": [
-      "Water",
-      "Egg",
-      "Salt",
-      "1",
-      "2",
-      "3"
+      "180g shredded ham hock",
+      "4 large potatoes, peeled",
+      "600g Tesco Finest cream of mushroom soup"
     ],
     "preparationSteps": [
-      "Add water in a Utensil",
-      "Put egg in the water",
-      "Heat until the water starts boiling and wait for 5 mins",
-      "Serve eggs with some salt and addons"
+      "Preheat the oven to gas 8, 230°C, fan 210°C. Peel 4 large potatoes. Chop 2 potatoes into small cubes, parboil in a pan of boiling water for 5 mins, then drain. Slice the remaining 2 potatoes as thinly as you can and set aside.",
+      "In a medium baking dish, mix 180g shredded ham hock, 600g Tesco Finest cream of mushroom soup and the cubed potatoes together to create the filling. Top with the thinly sliced potatoes and brush with a little olive oil.",
+      "Bake for 50-55 mins until piping hot with a crispy top.",
+      "Serve immediately."
     ],
-    "image": "https://via.placeholder.com/450x280/454545/ffffff?text=Egg3"
+    "image": "./assets/images/potato.jpg"
+  },
+  {
+    "id": 4,
+    "recipeTitle": "Chocolate Cake",
+    "mealType": "Snacks",
+    "serves": "10-12 Peoples",
+    "difficultyLevel": "Intermediate",
+    "ingredients": [
+      "8 large eggs",
+      "225g unsalted butter",
+      "450g dark chocolate"
+    ],
+    "preparationSteps": [
+      "Preheat the oven to gas 3, 160°C, fan 140°C. Grease and line a 20cm round cake tin. Beat 8 large eggs in a large mixing bowl until doubled in volume (this will take about 10 mins).",
+      "Put 225g unsalted butter and 450g chopped dark chocolate in a pan and gently melt over a low heat. Allow to cool slightly, then carefully fold into the eggs.",
+      "Pour the mixture into the prepared cake tin and wrap the outside of the tin in foil. Place in a large roasting tin one-third filled with boiling water. Bake for 1 hr or until a skewer inserted into the middle comes out clean.",
+      "Allow the cake to cool completely before removing from the tin. Serve with a dusting of icing sugar and a few fresh raspberries, if you like."
+    ],
+    "image": "./assets/images/cake.jpg"
   }
 ]

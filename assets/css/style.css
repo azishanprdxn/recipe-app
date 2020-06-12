@@ -222,11 +222,14 @@ h2 {
 
 .details li figure {
   width: 100%;
+  padding-bottom: 12px;
   margin: 0 auto;
+  margin-bottom: 12px;
 }
 
 .details li img {
   width: 50%;
+  border: 12px solid #ecf0f1;
   margin-left: 54px;
   margin-top: 24px;
   text-align: center;
@@ -326,5 +329,7 @@ h2 {
 =================================*/ 
 
 /*media query starts*/
-/*media query for 995px starts here*/
-@media only screen and (max-width: 995px) {}  
+/*media query for 768px starts here*/
+@media only screen and (max-width: 768px) {
+  .recipe-card { width: 92%; }
+}  
