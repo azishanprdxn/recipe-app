@@ -131,7 +131,6 @@ let searchedRecipeList = () => {
 
 // Function to display searched recipe card
 let displaySearchedRecipeCard = (x) => {
-  console.log(searchResult);
   let heading = document.querySelectorAll('.searched-recipe-details h2');
   heading[0].style.display = 'block';
   // Displays the Recipes Details
