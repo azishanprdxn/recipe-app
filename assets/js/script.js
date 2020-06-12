@@ -1,36 +1,33 @@
 /* Author: Zishan Ansari */
-let recipeData = new XMLHttpRequest(); // AJAX Request
 let fetchedData, length;
-let recipeLink = './assets/json/recipe.json';
 let searchResult;
+let recipeLink = './assets/json/recipe.json';
 
-recipeData.open('GET', recipeLink, true);
-recipeData.send();
-recipeData.onreadystatechange = function () {
-  if (this.readyState == 4 && this.status == 200) {
-    // Stores the data fetched in fetchedData
-    fetchedData = JSON.parse(this.responseText);
-    length = fetchedData.length;
+// Fetching API
+fetch(recipeLink)
+  .then(response => response.json())
+  .then(data => {
+    fetchedData = data;
     displayRecipeList();
-  }
-}
+  });
 
 // Function to Display Recipe Title List
 let displayRecipeList = () => {
+  length = fetchedData.length;
   for (let i = 0; i < length; i++) {
     document.getElementById('recipe-list').innerHTML +=
-    `<li onclick="displayRecipeCard(${i})">
+      `<li onclick="displayRecipeCard(${i})">
       <a title="${fetchedData[i].recipeTitle}">${fetchedData[i].id}. ${fetchedData[i].recipeTitle}</a>
     </li>`;
   }
 }
 
 // Function to Display Recipe Card
-let displayRecipeCard = (x) => {
+function displayRecipeCard(x) {
   let heading = document.querySelectorAll('.recipe-details h2');
   heading[0].style.display = 'block';
   document.getElementById('details-area').innerHTML =
-  `<div class="recipe-card">
+    `<div class="recipe-card">
     <ul class="details">
       <li>Recipe Title: <span>${fetchedData[x].recipeTitle}</span></li>
       <li>Meal Type: <span>${fetchedData[x].mealType}</span></li>
@@ -78,6 +75,7 @@ let displaySteps = (x) => {
 // Search Area Section
 let searchButton = document.getElementById('search-button');
 searchButton.onclick = searchRecipe;
+let fetchedRecipe, fetchedLength, searchText;
 
 // Function to search recipe
 function searchRecipe() {
@@ -95,36 +93,36 @@ function searchRecipe() {
 
 let searchedRecipeList = () => {
   // AJAX Request
-  let searchText = document.getElementById('search-text').value;
-  let searchRequest = new XMLHttpRequest();
-  let fetchedRecipe, fetchedLength;
+  searchText = document.getElementById('search-text').value;
   let apiUrl = `https://www.themealdb.com/api/json/v1/1/search.php?s=${searchText}`;
-  
-  searchRequest.open('GET', apiUrl, true);
-  searchRequest.send();
-  searchRequest.onreadystatechange = function () {
-    if (this.readyState == 4 && this.status == 200) {
-      // Stores the data fetched in fetchedData
-      fetchedRecipe = JSON.parse(this.responseText);
-      searchResult = fetchedRecipe;
-      if (fetchedRecipe.meals === null) {
-        document.getElementById('searched-list').innerHTML =
-        `<li class="not-found">
+
+  // Fetching API
+  fetch(apiUrl)
+    .then(response => response.json())
+    .then(data => {
+      fetchedRecipe = data;
+      searchedResponse();
+    });
+}
+
+let searchedResponse = () => {
+  searchResult = fetchedRecipe;
+  if (fetchedRecipe.meals === null) {
+    document.getElementById('searched-list').innerHTML =
+      `<li class="not-found">
           <a title="${searchText} Not Found">${searchText} Not Found</a>
         </li>`;
-      } else {
-        fetchedLength = fetchedRecipe.meals.length;
-        // Displays the Recipes List
-        document.getElementById('searched-list').innerHTML = '';
-        let count = 1;
-        for (let i = 0; i < fetchedLength; i++) {
-          document.getElementById('searched-list').innerHTML +=
-          `<li onclick='displaySearchedRecipeCard(${i})'>
+  } else {
+    fetchedLength = fetchedRecipe.meals.length;
+    // Displays the Recipes List
+    document.getElementById('searched-list').innerHTML = '';
+    let count = 1;
+    for (let i = 0; i < fetchedLength; i++) {
+      document.getElementById('searched-list').innerHTML +=
+        `<li onclick='displaySearchedRecipeCard(${i})'>
             <a title="${fetchedRecipe.meals[i].strMeal}">${count}. ${fetchedRecipe.meals[i].strMeal}</a>
           </li>`;
-          count++;
-        }
-      }
+      count++;
     }
   }
 }
@@ -135,7 +133,7 @@ let displaySearchedRecipeCard = (x) => {
   heading[0].style.display = 'block';
   // Displays the Recipes Details
   document.getElementById('searched-details-area').innerHTML =
-  `<div class="recipe-card">
+    `<div class="recipe-card">
     <ul class="details">
       <li>Recipe Title: <span>${searchResult.meals[x].strMeal}</span></li>
       <li>Meal Origin: <span>${searchResult.meals[x].strArea}</span></li>
@@ -157,5 +155,14 @@ let displaySearchedRecipeCard = (x) => {
         </figure>
       </li>
     </ul>
+    <div class="save-control">
+      <button type="button" onclick="onSave(${x})">Save</button>
+    </div>
   </div>`;
+}
+
+// On Save Function
+let onSave = (x) => {
+  let saveData = JSON.stringify(searchResult.meals[x]);
+  console.log(saveData);
 }
