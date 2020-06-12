@@ -162,6 +162,23 @@ let displaySearchedRecipeCard = (x) => {
 
 // On Save Function
 let onSave = (x) => {
-  let saveData = JSON.stringify(searchResult.meals[x]);
+  let saveData = searchResult.meals[x];
   console.log(saveData);
+
+  const data = saveData;
+
+  fetch(recipeLink, {
+    method: 'POST', // or 'PUT'
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(data),
+  })
+    .then(response => response.json())
+    .then(data => {
+      console.log('Success:', data);
+    })
+    .catch((error) => {
+      console.error('Error:', error);
+    });
 }
