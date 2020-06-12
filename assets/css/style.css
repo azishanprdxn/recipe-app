@@ -212,6 +212,7 @@ h2 {
   color: #3498db;
   display: block;
   font-size: 18px;
+  line-height: 1.5;
 }
 
 .details li span {
@@ -220,15 +221,20 @@ h2 {
   font-size: 16px;
 }
 
+.details li a:hover span {
+  color: #3498db;
+  text-decoration: underline;
+}
+
 .details li figure {
-  width: 100%;
+  /* width: 100%; */
   padding-bottom: 12px;
   margin: 0 auto;
   margin-bottom: 12px;
 }
 
 .details li img {
-  width: 50%;
+  width: 85%;
   border: 12px solid #ecf0f1;
   margin-left: 54px;
   margin-top: 24px;
@@ -334,4 +340,5 @@ h2 {
 /*media query for 768px starts here*/
 @media only screen and (max-width: 768px) {
   .recipe-card { width: 92%; }
+  .details li img { margin-left: 0; }
 }  

@@ -1,35 +1,34 @@
 /* Author: Zishan Ansari */
-let newRequest = new XMLHttpRequest(); // AJAX Request
+let recipeData = new XMLHttpRequest(); // AJAX Request
 let fetchedData, length;
-let apiLink = './assets/json/recipe.json';
+let recipeLink = './assets/json/recipe.json';
+let searchResult;
 
-newRequest.open('GET', apiLink, true);
-newRequest.send();
-newRequest.onreadystatechange = function () {
+recipeData.open('GET', recipeLink, true);
+recipeData.send();
+recipeData.onreadystatechange = function () {
   if (this.readyState == 4 && this.status == 200) {
     // Stores the data fetched in fetchedData
     fetchedData = JSON.parse(this.responseText);
     length = fetchedData.length;
-    displayList();
+    displayRecipeList();
   }
 }
 
 // Function to Display Recipe Title List
-let displayList = () => {
-  // Displays the Recipes List
+let displayRecipeList = () => {
   for (let i = 0; i < length; i++) {
     document.getElementById('recipe-list').innerHTML +=
-    `<li onclick="displayRecipe(${i})">
+    `<li onclick="displayRecipeCard(${i})">
       <a title="${fetchedData[i].recipeTitle}">${fetchedData[i].id}. ${fetchedData[i].recipeTitle}</a>
     </li>`;
   }
 }
 
-// Function to Display Recipe Detail
-let displayRecipe = (x) => {
+// Function to Display Recipe Card
+let displayRecipeCard = (x) => {
   let heading = document.querySelectorAll('.recipe-details h2');
   heading[0].style.display = 'block';
-  // Displays the Recipes Details
   document.getElementById('details-area').innerHTML =
   `<div class="recipe-card">
     <ul class="details">
@@ -107,9 +106,8 @@ let searchedRecipeList = () => {
     if (this.readyState == 4 && this.status == 200) {
       // Stores the data fetched in fetchedData
       fetchedRecipe = JSON.parse(this.responseText);
-      console.log(fetchedRecipe);
+      searchResult = fetchedRecipe;
       if (fetchedRecipe.meals === null) {
-        console.log(searchText);
         document.getElementById('searched-list').innerHTML =
         `<li class="not-found">
           <a title="${searchText} Not Found">${searchText} Not Found</a>
@@ -121,7 +119,7 @@ let searchedRecipeList = () => {
         let count = 1;
         for (let i = 0; i < fetchedLength; i++) {
           document.getElementById('searched-list').innerHTML +=
-          `<li onclick="displaySearchedRecipeDetails(${i})">
+          `<li onclick='displaySearchedRecipeCard(${i})'>
             <a title="${fetchedRecipe.meals[i].strMeal}">${count}. ${fetchedRecipe.meals[i].strMeal}</a>
           </li>`;
           count++;
@@ -131,22 +129,32 @@ let searchedRecipeList = () => {
   }
 }
 
-function displaySearchedRecipeDetails(x) {
-  let fetchedRecipe;
-  console.log(fetchedRecipe, x);
+// Function to display searched recipe card
+let displaySearchedRecipeCard = (x) => {
   let heading = document.querySelectorAll('.searched-recipe-details h2');
   heading[0].style.display = 'block';
   // Displays the Recipes Details
   document.getElementById('searched-details-area').innerHTML =
   `<div class="recipe-card">
     <ul class="details">
-      <li>Recipe Title: <span>{fetchedData[x].recipeTitle}</span></li>
-      <li>Meal Type: <span>{fetchedData[x].mealType}</span></li>
-      <li>Number of People it Serves: <span>{fetchedData[x].serves}</span></li>
-      <li>Difficulty Level: <span>{fetchedData[x].difficultyLevel}</span></li>
-      <li>Ingredients: <span><ul id="ing" class="ingredients"></ul></span></li>
-      <li>Preparation Steps: <span><ul id="steps" class="preparation-steps"></ul></span></li>
+      <li>Recipe Title: <span>${searchResult.meals[x].strMeal}</span></li>
+      <li>Meal Origin: <span>${searchResult.meals[x].strArea}</span></li>
+      <li>Category: <span>${searchResult.meals[x].strCategory}</span></li>
+      <li>Recipe Link:
+        <a href="${searchResult.meals[x].strSource}" target="_blank" rel="noopener">
+          <span>Click Here</span>
+        </a>
+      </li>
+      <li>Video Link:
+        <a href="${searchResult.meals[x].strSource}" target="_blank" rel="noopener">
+          <span>Watch Video</span>
+        </a>
+      </li>
+      <li>Preparation Steps: <span>${searchResult.meals[x].strInstructions}</span></li>
       <li>Photo:
+        <figure>
+          <img src="${searchResult.meals[x].strMealThumb}" alt="${searchResult.meals[x].strMeal}">
+        </figure>
       </li>
     </ul>
   </div>`;
