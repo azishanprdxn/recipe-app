@@ -2,13 +2,15 @@
 let fetchedData, length;
 let recipeLink = './assets/json/recipe.json';
 
-// Fetching API
-fetch(recipeLink)
-  .then(response => response.json())
-  .then(data => {
-    fetchedData = data;
+// Make a request
+axios.get(recipeLink)
+  .then(function (response) {
+    fetchedData = response.data;
     displayRecipeList();
-  });
+  })
+  .catch(function (error) {
+    console.log(error);
+  })
 
 // Function to Display Recipe Title List
 let displayRecipeList = () => {
@@ -75,6 +77,7 @@ let displaySteps = (x) => {
 let searchButton = document.getElementById('search-button');
 searchButton.onclick = searchRecipe;
 let fetchedRecipe, fetchedLength, searchText;
+let apiUrl;
 
 // Function to search recipe
 function searchRecipe() {
@@ -92,15 +95,16 @@ function searchRecipe() {
 
 let searchedRecipeList = () => {
   searchText = document.getElementById('search-text').value;
-  let apiUrl = `https://www.themealdb.com/api/json/v1/1/search.php?s=${searchText}`;
+  apiUrl = `https://www.themealdb.com/api/json/v1/1/search.php?s=${searchText}`;
 
-  // Fetching API
-  fetch(apiUrl)
-    .then(response => response.json())
-    .then(data => {
-      fetchedRecipe = data;
-      searchedResponse();
-    });
+axios.get(apiUrl)
+  .then(function (response) {
+    fetchedRecipe = response.data;
+    searchedResponse();
+  })
+  .catch(function (error) {
+    console.log(error);
+  })
 }
 
 let searchedResponse = () => {
