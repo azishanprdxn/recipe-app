@@ -1,6 +1,5 @@
 /* Author: Zishan Ansari */
 let fetchedData, length;
-let searchResult;
 let recipeLink = './assets/json/recipe.json';
 
 // Fetching API
@@ -105,12 +104,13 @@ let searchedRecipeList = () => {
 }
 
 let searchedResponse = () => {
-  searchResult = fetchedRecipe;
   if (fetchedRecipe.meals === null) {
     document.getElementById('searched-list').innerHTML =
       `<li class="not-found">
           <a title="${searchText} Not Found">${searchText} Not Found</a>
-        </li>`;
+      </li>`;
+    document.getElementById('searched-details-area').style.display = 'none';
+    document.querySelectorAll('.searched-recipe-details h2')[0].style.display = 'none';
   } else {
     fetchedLength = fetchedRecipe.meals.length;
     // Displays the Recipes List
@@ -130,27 +130,28 @@ let searchedResponse = () => {
 let displaySearchedRecipeCard = (x) => {
   let heading = document.querySelectorAll('.searched-recipe-details h2');
   heading[0].style.display = 'block';
+  document.getElementById('searched-details-area').style.display = 'block';
   // Displays the Recipes Details
   document.getElementById('searched-details-area').innerHTML =
-    `<div class="recipe-card">
+  `<div class="recipe-card">
     <ul class="details">
-      <li>Recipe Title: <span>${searchResult.meals[x].strMeal}</span></li>
-      <li>Meal Origin: <span>${searchResult.meals[x].strArea}</span></li>
-      <li>Category: <span>${searchResult.meals[x].strCategory}</span></li>
+      <li>Recipe Title: <span>${fetchedRecipe.meals[x].strMeal}</span></li>
+      <li>Meal Origin: <span>${fetchedRecipe.meals[x].strArea}</span></li>
+      <li>Category: <span>${fetchedRecipe.meals[x].strCategory}</span></li>
       <li>Recipe Link:
-        <a href="${searchResult.meals[x].strSource}" target="_blank" rel="noopener">
+        <a href="${fetchedRecipe.meals[x].strSource}" target="_blank" rel="noopener">
           <span>Click Here</span>
         </a>
       </li>
       <li>Video Link:
-        <a href="${searchResult.meals[x].strYoutube}" target="_blank" rel="noopener">
+        <a href="${fetchedRecipe.meals[x].strYoutube}" target="_blank" rel="noopener">
           <span>Watch Video</span>
         </a>
       </li>
-      <li>Preparation Steps: <span>${searchResult.meals[x].strInstructions}</span></li>
+      <li>Preparation Steps: <span>${fetchedRecipe.meals[x].strInstructions}</span></li>
       <li>Photo:
         <figure>
-          <img src="${searchResult.meals[x].strMealThumb}" alt="${searchResult.meals[x].strMeal}">
+          <img src="${fetchedRecipe.meals[x].strMealThumb}" alt="${fetchedRecipe.meals[x].strMeal}">
         </figure>
       </li>
     </ul>
@@ -162,7 +163,7 @@ let displaySearchedRecipeCard = (x) => {
 
 // On Save Function
 let onSave = (x) => {
-  let saveData = searchResult.meals[x];
+  let saveData = fetchedRecipe.meals[x];
   const data = saveData;
   console.log(JSON.stringify(data));
 }
